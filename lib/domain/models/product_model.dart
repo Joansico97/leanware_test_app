@@ -1,8 +1,8 @@
 class ProductModel {
-  final String id;
-  final String name;
-  final String photo;
-  final double price;
+  final String? id;
+  final String? name;
+  final String? photo;
+  final double? price;
 
   ProductModel({
     required this.id,
@@ -24,14 +24,14 @@ class ProductModel {
         price: price ?? this.price,
       );
 
-  factory ProductModel.fromMap(Map<String, dynamic> json) => ProductModel(
+  factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
         id: json["id"],
         name: json["name"],
         photo: json["photo"],
         price: json["price"]?.toDouble(),
       );
 
-  Map<String, dynamic> toMap() => {
+  Map<String, dynamic> toJson() => {
         "id": id,
         "name": name,
         "photo": photo,

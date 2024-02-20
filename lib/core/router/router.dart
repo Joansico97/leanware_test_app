@@ -20,5 +20,11 @@ final _appRouter = GoRouter(
       parentNavigatorKey: rootNavigatorKey,
       builder: _homeHandler,
     ),
+    GoRoute(
+      path: RouterPaths.tableDetails,
+      name: RouterPaths.tableDetails,
+      parentNavigatorKey: rootNavigatorKey,
+      builder: _tableDetailsHandler,
+    ),
   ],
 );

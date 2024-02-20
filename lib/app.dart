@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:leanware_test_app/core/router/router.dart';
 import 'package:leanware_test_app/gen/l10n.dart';
 
+import 'core/theme/theme.dart';
 import 'infraestructure/providers/providers.dart';
 
 class MyApp extends ConsumerWidget {
@@ -13,6 +14,7 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(routerProvider);
     final locale = ref.watch(localeProvider);
+    final isDarkMode = ref.watch(isDarkModeProvider);
     return MaterialApp.router(
       title: 'Material App',
       debugShowCheckedModeBanner: false,
@@ -22,6 +24,7 @@ class MyApp extends ConsumerWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
+      theme: AppTheme(isDarkmode: isDarkMode).getTheme(),
       locale: locale,
       supportedLocales: IntlTrans.delegate.supportedLocales,
       routerConfig: router,
