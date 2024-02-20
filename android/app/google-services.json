@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "227002429542",
+    "project_id": "leanware-app",
+    "storage_bucket": "leanware-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227002429542:android:06686ff455040933a4fda7",
+        "android_client_info": {
+          "package_name": "com.jorgedev.leanware_test_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjgXhUcdV0QgTGBSE-dYrVNnQBq98YVFo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
