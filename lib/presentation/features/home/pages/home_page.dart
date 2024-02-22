@@ -7,7 +7,7 @@ class HomePage extends BasePage {
   const HomePage({super.key});
 
   @override
-  Widget? mobileBody(BuildContext context, WidgetRef ref) => HomeViewMobile(ref: ref);
+  Widget? mobileBody(BuildContext context, WidgetRef ref) => const HomeViewMobile();
   @override
   Widget? webBody(BuildContext context, WidgetRef ref) => HomeViewWeb(ref: ref);
 }

@@ -20,9 +20,12 @@ HomeFeatureModel _$HomeFeatureModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$HomeFeatureModel {
-  bool get isCharging => throw _privateConstructorUsedError;
-  List<dynamic> get productsList => throw _privateConstructorUsedError;
-  List<DinerModel> get tables => throw _privateConstructorUsedError;
+  int get currentIndex => throw _privateConstructorUsedError;
+  List<ProductModel> get productsList => throw _privateConstructorUsedError;
+  List<TableModel> get tables => throw _privateConstructorUsedError;
+  TableModel get currentTable => throw _privateConstructorUsedError;
+  DinerModel get currentDiner => throw _privateConstructorUsedError;
+  List<bool> get listBool => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +40,12 @@ abstract class $HomeFeatureModelCopyWith<$Res> {
       _$HomeFeatureModelCopyWithImpl<$Res, HomeFeatureModel>;
   @useResult
   $Res call(
-      {bool isCharging, List<dynamic> productsList, List<DinerModel> tables});
+      {int currentIndex,
+      List<ProductModel> productsList,
+      List<TableModel> tables,
+      TableModel currentTable,
+      DinerModel currentDiner,
+      List<bool> listBool});
 }
 
 /// @nodoc
@@ -53,23 +61,38 @@ class _$HomeFeatureModelCopyWithImpl<$Res, $Val extends HomeFeatureModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isCharging = null,
+    Object? currentIndex = null,
     Object? productsList = null,
     Object? tables = null,
+    Object? currentTable = null,
+    Object? currentDiner = null,
+    Object? listBool = null,
   }) {
     return _then(_value.copyWith(
-      isCharging: null == isCharging
-          ? _value.isCharging
-          : isCharging // ignore: cast_nullable_to_non_nullable
-              as bool,
+      currentIndex: null == currentIndex
+          ? _value.currentIndex
+          : currentIndex // ignore: cast_nullable_to_non_nullable
+              as int,
       productsList: null == productsList
           ? _value.productsList
           : productsList // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<ProductModel>,
       tables: null == tables
           ? _value.tables
           : tables // ignore: cast_nullable_to_non_nullable
-              as List<DinerModel>,
+              as List<TableModel>,
+      currentTable: null == currentTable
+          ? _value.currentTable
+          : currentTable // ignore: cast_nullable_to_non_nullable
+              as TableModel,
+      currentDiner: null == currentDiner
+          ? _value.currentDiner
+          : currentDiner // ignore: cast_nullable_to_non_nullable
+              as DinerModel,
+      listBool: null == listBool
+          ? _value.listBool
+          : listBool // ignore: cast_nullable_to_non_nullable
+              as List<bool>,
     ) as $Val);
   }
 }
@@ -83,7 +106,12 @@ abstract class _$$HomeFeatureModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {bool isCharging, List<dynamic> productsList, List<DinerModel> tables});
+      {int currentIndex,
+      List<ProductModel> productsList,
+      List<TableModel> tables,
+      TableModel currentTable,
+      DinerModel currentDiner,
+      List<bool> listBool});
 }
 
 /// @nodoc
@@ -97,23 +125,38 @@ class __$$HomeFeatureModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isCharging = null,
+    Object? currentIndex = null,
     Object? productsList = null,
     Object? tables = null,
+    Object? currentTable = null,
+    Object? currentDiner = null,
+    Object? listBool = null,
   }) {
     return _then(_$HomeFeatureModelImpl(
-      isCharging: null == isCharging
-          ? _value.isCharging
-          : isCharging // ignore: cast_nullable_to_non_nullable
-              as bool,
+      currentIndex: null == currentIndex
+          ? _value.currentIndex
+          : currentIndex // ignore: cast_nullable_to_non_nullable
+              as int,
       productsList: null == productsList
           ? _value._productsList
           : productsList // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<ProductModel>,
       tables: null == tables
           ? _value._tables
           : tables // ignore: cast_nullable_to_non_nullable
-              as List<DinerModel>,
+              as List<TableModel>,
+      currentTable: null == currentTable
+          ? _value.currentTable
+          : currentTable // ignore: cast_nullable_to_non_nullable
+              as TableModel,
+      currentDiner: null == currentDiner
+          ? _value.currentDiner
+          : currentDiner // ignore: cast_nullable_to_non_nullable
+              as DinerModel,
+      listBool: null == listBool
+          ? _value._listBool
+          : listBool // ignore: cast_nullable_to_non_nullable
+              as List<bool>,
     ));
   }
 }
@@ -122,36 +165,52 @@ class __$$HomeFeatureModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$HomeFeatureModelImpl implements _HomeFeatureModel {
   const _$HomeFeatureModelImpl(
-      {required this.isCharging,
-      required final List<dynamic> productsList,
-      required final List<DinerModel> tables})
+      {required this.currentIndex,
+      required final List<ProductModel> productsList,
+      required final List<TableModel> tables,
+      required this.currentTable,
+      required this.currentDiner,
+      required final List<bool> listBool})
       : _productsList = productsList,
-        _tables = tables;
+        _tables = tables,
+        _listBool = listBool;
 
   factory _$HomeFeatureModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$HomeFeatureModelImplFromJson(json);
 
   @override
-  final bool isCharging;
-  final List<dynamic> _productsList;
+  final int currentIndex;
+  final List<ProductModel> _productsList;
   @override
-  List<dynamic> get productsList {
+  List<ProductModel> get productsList {
     if (_productsList is EqualUnmodifiableListView) return _productsList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_productsList);
   }
 
-  final List<DinerModel> _tables;
+  final List<TableModel> _tables;
   @override
-  List<DinerModel> get tables {
+  List<TableModel> get tables {
     if (_tables is EqualUnmodifiableListView) return _tables;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_tables);
   }
 
   @override
+  final TableModel currentTable;
+  @override
+  final DinerModel currentDiner;
+  final List<bool> _listBool;
+  @override
+  List<bool> get listBool {
+    if (_listBool is EqualUnmodifiableListView) return _listBool;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listBool);
+  }
+
+  @override
   String toString() {
-    return 'HomeFeatureModel(isCharging: $isCharging, productsList: $productsList, tables: $tables)';
+    return 'HomeFeatureModel(currentIndex: $currentIndex, productsList: $productsList, tables: $tables, currentTable: $currentTable, currentDiner: $currentDiner, listBool: $listBool)';
   }
 
   @override
@@ -159,20 +218,28 @@ class _$HomeFeatureModelImpl implements _HomeFeatureModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeFeatureModelImpl &&
-            (identical(other.isCharging, isCharging) ||
-                other.isCharging == isCharging) &&
+            (identical(other.currentIndex, currentIndex) ||
+                other.currentIndex == currentIndex) &&
             const DeepCollectionEquality()
                 .equals(other._productsList, _productsList) &&
-            const DeepCollectionEquality().equals(other._tables, _tables));
+            const DeepCollectionEquality().equals(other._tables, _tables) &&
+            (identical(other.currentTable, currentTable) ||
+                other.currentTable == currentTable) &&
+            (identical(other.currentDiner, currentDiner) ||
+                other.currentDiner == currentDiner) &&
+            const DeepCollectionEquality().equals(other._listBool, _listBool));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      isCharging,
+      currentIndex,
       const DeepCollectionEquality().hash(_productsList),
-      const DeepCollectionEquality().hash(_tables));
+      const DeepCollectionEquality().hash(_tables),
+      currentTable,
+      currentDiner,
+      const DeepCollectionEquality().hash(_listBool));
 
   @JsonKey(ignore: true)
   @override
@@ -191,19 +258,28 @@ class _$HomeFeatureModelImpl implements _HomeFeatureModel {
 
 abstract class _HomeFeatureModel implements HomeFeatureModel {
   const factory _HomeFeatureModel(
-      {required final bool isCharging,
-      required final List<dynamic> productsList,
-      required final List<DinerModel> tables}) = _$HomeFeatureModelImpl;
+      {required final int currentIndex,
+      required final List<ProductModel> productsList,
+      required final List<TableModel> tables,
+      required final TableModel currentTable,
+      required final DinerModel currentDiner,
+      required final List<bool> listBool}) = _$HomeFeatureModelImpl;
 
   factory _HomeFeatureModel.fromJson(Map<String, dynamic> json) =
       _$HomeFeatureModelImpl.fromJson;
 
   @override
-  bool get isCharging;
+  int get currentIndex;
   @override
-  List<dynamic> get productsList;
+  List<ProductModel> get productsList;
   @override
-  List<DinerModel> get tables;
+  List<TableModel> get tables;
+  @override
+  TableModel get currentTable;
+  @override
+  DinerModel get currentDiner;
+  @override
+  List<bool> get listBool;
   @override
   @JsonKey(ignore: true)
   _$$HomeFeatureModelImplCopyWith<_$HomeFeatureModelImpl> get copyWith =>

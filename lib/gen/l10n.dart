@@ -59,6 +59,136 @@ class IntlTrans {
       args: [],
     );
   }
+
+  /// `Mesa`
+  String get tableTitle {
+    return Intl.message(
+      'Mesa',
+      name: 'tableTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crear mesa`
+  String get tableModalTitle {
+    return Intl.message(
+      'Crear mesa',
+      name: 'tableModalTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crear`
+  String get tableModalButton {
+    return Intl.message(
+      'Crear',
+      name: 'tableModalButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ingrese número de la mesa`
+  String get tableModalMessage {
+    return Intl.message(
+      'Ingrese número de la mesa',
+      name: 'tableModalMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cliente`
+  String get dinerTitle {
+    return Intl.message(
+      'Cliente',
+      name: 'dinerTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crear cliente`
+  String get dinerModalTitle {
+    return Intl.message(
+      'Crear cliente',
+      name: 'dinerModalTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crear`
+  String get dinerModalButton {
+    return Intl.message(
+      'Crear',
+      name: 'dinerModalButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ingrese nombre del cliente`
+  String get dinerModalMessage {
+    return Intl.message(
+      'Ingrese nombre del cliente',
+      name: 'dinerModalMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Productos`
+  String get productTitle {
+    return Intl.message(
+      'Productos',
+      name: 'productTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Haga clic para añadir un nuevo producto`
+  String get productModalTitle {
+    return Intl.message(
+      'Haga clic para añadir un nuevo producto',
+      name: 'productModalTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `¿Está seguro de querer generar el pago?`
+  String get paymentModalTitle {
+    return Intl.message(
+      '¿Está seguro de querer generar el pago?',
+      name: 'paymentModalTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirmar`
+  String get confirmButton {
+    return Intl.message(
+      'Confirmar',
+      name: 'confirmButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancelar`
+  String get cancelButton {
+    return Intl.message(
+      'Cancelar',
+      name: 'cancelButton',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<IntlTrans> {

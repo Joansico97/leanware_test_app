@@ -8,7 +8,12 @@ class ProductRepositoryImpl implements ProductRepository {
 
   final ProductResource _productResource;
   @override
-  Either<String, List<ProductModel>> addProductToOrder() => _productResource.addProductToOrder();
+  Either<String, List<ProductModel>> addProductToOrder(
+          {required List<ProductModel> productList, required ProductModel product}) =>
+      _productResource.addProductToOrder(
+        product: product,
+        productList: productList,
+      );
 
   @override
   Either<String, List<ProductModel>> deleteProductToOrder() => _productResource.deleteProductToOrder();

@@ -22,6 +22,24 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "commingSoon": MessageLookupByLibrary.simpleMessage("Próximamente")
+        "cancelButton": MessageLookupByLibrary.simpleMessage("Cancelar"),
+        "commingSoon": MessageLookupByLibrary.simpleMessage("Próximamente"),
+        "confirmButton": MessageLookupByLibrary.simpleMessage("Confirmar"),
+        "dinerModalButton": MessageLookupByLibrary.simpleMessage("Crear"),
+        "dinerModalMessage":
+            MessageLookupByLibrary.simpleMessage("Ingrese nombre del cliente"),
+        "dinerModalTitle":
+            MessageLookupByLibrary.simpleMessage("Crear cliente"),
+        "dinerTitle": MessageLookupByLibrary.simpleMessage("Cliente"),
+        "paymentModalTitle": MessageLookupByLibrary.simpleMessage(
+            "¿Está seguro de querer generar el pago?"),
+        "productModalTitle": MessageLookupByLibrary.simpleMessage(
+            "Haga clic para añadir un nuevo producto"),
+        "productTitle": MessageLookupByLibrary.simpleMessage("Productos"),
+        "tableModalButton": MessageLookupByLibrary.simpleMessage("Crear"),
+        "tableModalMessage":
+            MessageLookupByLibrary.simpleMessage("Ingrese número de la mesa"),
+        "tableModalTitle": MessageLookupByLibrary.simpleMessage("Crear mesa"),
+        "tableTitle": MessageLookupByLibrary.simpleMessage("Mesa")
       };
 }

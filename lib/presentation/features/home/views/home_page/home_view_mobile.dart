@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:leanware_test_app/core/extensions/extensions.dart';
 import 'package:leanware_test_app/core/utils/utils.dart';
 import 'package:leanware_test_app/presentation/features/home/provider/home_provider.dart';
+import 'package:leanware_test_app/presentation/widgets/widgets.dart';
 
-class HomeViewMobile extends StatelessWidget {
-  const HomeViewMobile({Key? key, required this.ref}) : super(key: key);
+class HomeViewMobile extends ConsumerStatefulWidget {
+  const HomeViewMobile({super.key});
 
-  final WidgetRef ref;
+  @override
+  ConsumerState<HomeViewMobile> createState() => _HomeViewMobileState();
+}
+
+class _HomeViewMobileState extends ConsumerState<HomeViewMobile> {
+  @override
+  void initState() {
+    super.initState();
+    ref.read(homeProvider.notifier).getProducts();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +25,12 @@ class HomeViewMobile extends StatelessWidget {
     final notifier = ref.watch(homeProvider.notifier);
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () => notifier.showModal(),
-        child: const Icon(Icons.add),
+        backgroundColor: AppColors.primary,
+        onPressed: () => notifier.createTableShowModal(),
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
       ),
       body: Container(
         height: size.fullHeight(context),
@@ -32,45 +47,14 @@ class HomeViewMobile extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: state.tables.length,
                   itemBuilder: (context, index) => TableCard(
-                    onEdit: () {},
-                    onPay: () {},
-                    label: notifier.tableTextController.text,
+                    onEdit: () => notifier.editTable(index),
+                    onPay: () => notifier.paymentProcessShowModal(),
+                    label: state.tables[index].tableName!,
                   ),
                 ),
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class RoundButton extends StatelessWidget {
-  const RoundButton({
-    super.key,
-    required this.onTap,
-    required this.icon,
-  });
-
-  final VoidCallback onTap;
-  final IconData icon;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        height: size.height(context, .05),
-        width: size.height(context, .05),
-        alignment: Alignment.center,
-        decoration: const BoxDecoration(
-          shape: BoxShape.circle,
-          color: AppColors.grey,
-        ),
-        child: Icon(
-          icon,
-          color: Colors.white,
         ),
       ),
     );
@@ -107,7 +91,7 @@ class TableCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Text(
-            'Mesa $label',
+            '${context.locale.tableTitle} $label',
             style: AppStyles.subTitleBold,
           ),
           Row(

@@ -1,4 +1,17 @@
 {
      "@@locale": "es",
-     "commingSoon" : "Próximamente"
+     "commingSoon" : "Próximamente",
+     "tableTitle" : "Mesa",
+     "tableModalTitle" : "Crear mesa",
+     "tableModalButton" : "Crear",
+     "tableModalMessage" : "Ingrese número de la mesa",
+     "dinerTitle" : "Cliente",
+     "dinerModalTitle" : "Crear cliente",
+     "dinerModalButton" : "Crear",
+     "dinerModalMessage" : "Ingrese nombre del cliente",
+     "productTitle" : "Productos",
+     "productModalTitle" : "Haga clic para añadir un nuevo producto",
+     "paymentModalTitle" : "¿Está seguro de querer generar el pago?",
+     "confirmButton" : "Confirmar",
+     "cancelButton" : "Cancelar"
 }

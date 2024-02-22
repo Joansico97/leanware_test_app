@@ -10,9 +10,11 @@ class ProductResourceImpl implements ProductResource {
   final DatabaseRepository _databaseRepository;
 
   @override
-  Either<String, List<ProductModel>> addProductToOrder() {
+  Either<String, List<ProductModel>> addProductToOrder(
+      {required List<ProductModel> productList, required ProductModel product}) {
     Log().debug('Agrego producto a la lista');
-    return const Right([]);
+    productList.add(product);
+    return Right(productList);
   }
 
   @override

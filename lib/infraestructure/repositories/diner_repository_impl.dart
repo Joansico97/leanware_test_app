@@ -8,7 +8,13 @@ class DinerRespositoryImpl implements DinerRepository {
 
   final DinerResource _dinerRespositoryImpl;
   @override
-  Either<String, List<DinerModel>> addNewDiner() => _dinerRespositoryImpl.addNewDiner();
+  Either<String, List<DinerModel>> addNewDiner(
+          {required String dinerName, required String table, required List<DinerModel> dinerList}) =>
+      _dinerRespositoryImpl.addNewDiner(
+        dinerName: dinerName,
+        table: table,
+        dinerList: dinerList,
+      );
 
   @override
   Either<String, List<DinerModel>> assignDinerOrder() => _dinerRespositoryImpl.assignDinerOrder();

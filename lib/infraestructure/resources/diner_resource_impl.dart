@@ -1,13 +1,25 @@
 import 'package:either_dart/either.dart';
 import 'package:leanware_test_app/core/utils/utils.dart';
-import 'package:leanware_test_app/domain/models/diner_model.dart';
+import 'package:leanware_test_app/domain/models/models.dart';
 import 'package:leanware_test_app/domain/resources/resources.dart';
 
 class DinerResourceImpl implements DinerResource {
   @override
-  Either<String, List<DinerModel>> addNewDiner() {
+  Either<String, List<DinerModel>> addNewDiner(
+      {required String dinerName, required String table, required List<DinerModel> dinerList}) {
     Log().debug('agrego nuevo comensal');
-    return const Right([]);
+    final newDiner = DinerModel(
+      dinerName: dinerName,
+      table: int.parse(table),
+      order: [],
+      payment: PaymentSumaryModel(
+        totalPayment: 0,
+        tip: 0,
+        diner: '',
+      ),
+    );
+    dinerList.add(newDiner);
+    return Right(dinerList);
   }
 
   @override

@@ -1,6 +1,6 @@
 class PaymentSumaryModel {
-  final double totalPayment;
-  final double tip;
+  double? totalPayment;
+  double? tip;
   final String diner;
 
   PaymentSumaryModel({
@@ -21,8 +21,8 @@ class PaymentSumaryModel {
       );
 
   factory PaymentSumaryModel.fromMap(Map<String, dynamic> json) => PaymentSumaryModel(
-        totalPayment: json["total_payment"]?.toDouble(),
-        tip: json["tip"]?.toDouble(),
+        totalPayment: json["total_payment"] == null ? 0.0 : json["total_payment"]?.toDouble(),
+        tip: json["tip"] == null ? 0.0 : json["tip"]?.toDouble(),
         diner: json["diner"],
       );
 
