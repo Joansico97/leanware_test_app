@@ -324,6 +324,40 @@ class HomeFeatureEvents extends StateNotifier<HomeFeatureModel> {
     state = state.copyWith(totalPay: total.doubleFixed);
   }
 
+  void showFinalModal() {
+    showDialog(
+      context: rootNavigatorKey.currentContext!,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            context.locale.purchaseSummaryFinalMessage,
+            textAlign: TextAlign.center,
+            style: AppStyles.subTitleBold,
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                removeTable();
+                ref.read(routerProvider).pushNamed(RouterPaths.home);
+              },
+              child: Text(
+                context.locale.confirmButton,
+                style: AppStyles.bodyS.copyWith(),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void removeTable() {
+    List<TableModel> lisTables = [...state.tables];
+    lisTables.remove(state.currentTable);
+    state = state.copyWith(tables: lisTables);
+  }
+
   void editTable(int index) {
     ref.read(routerProvider).pushNamed(RouterPaths.tableDetails);
     List<bool> listBoolProv = [];

@@ -113,7 +113,7 @@ class PaymentViewMobile extends StatelessWidget {
               ),
               SizedBox(height: size.height(context, .02)),
               GestureDetector(
-                onTap: () {},
+                onTap: () => notifier.showFinalModal(),
                 child: Container(
                   padding: size.symmetric(context, 0, .03),
                   alignment: Alignment.center,

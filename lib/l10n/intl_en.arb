@@ -16,6 +16,9 @@
      "tipModalMessage" : "Enter the tip amount",
      "billTitle" : "Bill",
      "purchaseSummaryTitle" : "Purchase summary",
+     "purchaseSummaryFinalMessage" : "The bill has been paid",
+     "homeFloatingButton" : "Add new table",
+     "detailsFloatingButton" : "Add new diner",
      "payButton" : "Pay",
      "confirmButton" : "Confirm",
      "cancelButton" : "Cancel"

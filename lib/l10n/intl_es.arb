@@ -16,6 +16,9 @@
      "tipModalMessage" : "Ingresa la cantidad de propina",
      "billTitle" : "Factura",
      "purchaseSummaryTitle" : "Resumen de compra",
+     "purchaseSummaryFinalMessage" : "La cuenta ha sido pagada",
+     "homeFloatingButton" : "Añadir nueva mesa",
+     "detailsFloatingButton" : "Añadir nuevo cliente",
      "payButton" : "pagar",
      "confirmButton" : "Confirmar",
      "cancelButton" : "Cancelar"

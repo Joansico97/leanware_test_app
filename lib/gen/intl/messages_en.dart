@@ -26,17 +26,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancelButton": MessageLookupByLibrary.simpleMessage("Cancel"),
         "commingSoon": MessageLookupByLibrary.simpleMessage("Comming Soon"),
         "confirmButton": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "detailsFloatingButton":
+            MessageLookupByLibrary.simpleMessage("Add new diner"),
         "dinerModalButton": MessageLookupByLibrary.simpleMessage("Create"),
         "dinerModalMessage":
             MessageLookupByLibrary.simpleMessage("Enter diner name"),
         "dinerModalTitle": MessageLookupByLibrary.simpleMessage("Create diner"),
         "dinerTitle": MessageLookupByLibrary.simpleMessage("Diner"),
+        "homeFloatingButton":
+            MessageLookupByLibrary.simpleMessage("Add new table"),
         "payButton": MessageLookupByLibrary.simpleMessage("Pay"),
         "paymentModalTitle": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to generate the payment?"),
         "productModalTitle":
             MessageLookupByLibrary.simpleMessage("Click to add a new product"),
         "productTitle": MessageLookupByLibrary.simpleMessage("Products"),
+        "purchaseSummaryFinalMessage":
+            MessageLookupByLibrary.simpleMessage("The bill has been paid"),
         "purchaseSummaryTitle":
             MessageLookupByLibrary.simpleMessage("Purchase summary"),
         "tableModalButton": MessageLookupByLibrary.simpleMessage("Create"),

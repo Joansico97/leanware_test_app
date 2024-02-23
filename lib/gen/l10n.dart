@@ -210,6 +210,36 @@ class IntlTrans {
     );
   }
 
+  /// `La cuenta ha sido pagada`
+  String get purchaseSummaryFinalMessage {
+    return Intl.message(
+      'La cuenta ha sido pagada',
+      name: 'purchaseSummaryFinalMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Añadir nueva mesa`
+  String get homeFloatingButton {
+    return Intl.message(
+      'Añadir nueva mesa',
+      name: 'homeFloatingButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Añadir nuevo cliente`
+  String get detailsFloatingButton {
+    return Intl.message(
+      'Añadir nuevo cliente',
+      name: 'detailsFloatingButton',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `pagar`
   String get payButton {
     return Intl.message(

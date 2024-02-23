@@ -19,12 +19,14 @@ class TableDetailViewMobile extends StatelessWidget {
     final state = ref.watch(homeProvider);
     final notifier = ref.watch(homeProvider.notifier);
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.extended(
         backgroundColor: AppColors.primary,
         onPressed: () => notifier.createDinerShowModal(),
-        child: const Icon(
-          Icons.add,
-          color: Colors.white,
+        label: Text(
+          context.locale.detailsFloatingButton,
+          style: AppStyles.bodyL.copyWith(
+            color: Colors.white,
+          ),
         ),
       ),
       body: Column(
