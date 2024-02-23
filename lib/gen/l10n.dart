@@ -170,6 +170,56 @@ class IntlTrans {
     );
   }
 
+  /// `Añadir propina`
+  String get tipModalTitle {
+    return Intl.message(
+      'Añadir propina',
+      name: 'tipModalTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ingresa la cantidad de propina`
+  String get tipModalMessage {
+    return Intl.message(
+      'Ingresa la cantidad de propina',
+      name: 'tipModalMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Factura`
+  String get billTitle {
+    return Intl.message(
+      'Factura',
+      name: 'billTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resumen de compra`
+  String get purchaseSummaryTitle {
+    return Intl.message(
+      'Resumen de compra',
+      name: 'purchaseSummaryTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `pagar`
+  String get payButton {
+    return Intl.message(
+      'pagar',
+      name: 'payButton',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Confirmar`
   String get confirmButton {
     return Intl.message(

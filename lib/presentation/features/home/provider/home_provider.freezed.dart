@@ -26,6 +26,10 @@ mixin _$HomeFeatureModel {
   TableModel get currentTable => throw _privateConstructorUsedError;
   DinerModel get currentDiner => throw _privateConstructorUsedError;
   List<bool> get listBool => throw _privateConstructorUsedError;
+  List<bool> get canPay => throw _privateConstructorUsedError;
+  bool get canAddTable => throw _privateConstructorUsedError;
+  List<bool> get canAddDiner => throw _privateConstructorUsedError;
+  double get totalPay => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,7 +49,11 @@ abstract class $HomeFeatureModelCopyWith<$Res> {
       List<TableModel> tables,
       TableModel currentTable,
       DinerModel currentDiner,
-      List<bool> listBool});
+      List<bool> listBool,
+      List<bool> canPay,
+      bool canAddTable,
+      List<bool> canAddDiner,
+      double totalPay});
 }
 
 /// @nodoc
@@ -67,6 +75,10 @@ class _$HomeFeatureModelCopyWithImpl<$Res, $Val extends HomeFeatureModel>
     Object? currentTable = null,
     Object? currentDiner = null,
     Object? listBool = null,
+    Object? canPay = null,
+    Object? canAddTable = null,
+    Object? canAddDiner = null,
+    Object? totalPay = null,
   }) {
     return _then(_value.copyWith(
       currentIndex: null == currentIndex
@@ -93,6 +105,22 @@ class _$HomeFeatureModelCopyWithImpl<$Res, $Val extends HomeFeatureModel>
           ? _value.listBool
           : listBool // ignore: cast_nullable_to_non_nullable
               as List<bool>,
+      canPay: null == canPay
+          ? _value.canPay
+          : canPay // ignore: cast_nullable_to_non_nullable
+              as List<bool>,
+      canAddTable: null == canAddTable
+          ? _value.canAddTable
+          : canAddTable // ignore: cast_nullable_to_non_nullable
+              as bool,
+      canAddDiner: null == canAddDiner
+          ? _value.canAddDiner
+          : canAddDiner // ignore: cast_nullable_to_non_nullable
+              as List<bool>,
+      totalPay: null == totalPay
+          ? _value.totalPay
+          : totalPay // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
@@ -111,7 +139,11 @@ abstract class _$$HomeFeatureModelImplCopyWith<$Res>
       List<TableModel> tables,
       TableModel currentTable,
       DinerModel currentDiner,
-      List<bool> listBool});
+      List<bool> listBool,
+      List<bool> canPay,
+      bool canAddTable,
+      List<bool> canAddDiner,
+      double totalPay});
 }
 
 /// @nodoc
@@ -131,6 +163,10 @@ class __$$HomeFeatureModelImplCopyWithImpl<$Res>
     Object? currentTable = null,
     Object? currentDiner = null,
     Object? listBool = null,
+    Object? canPay = null,
+    Object? canAddTable = null,
+    Object? canAddDiner = null,
+    Object? totalPay = null,
   }) {
     return _then(_$HomeFeatureModelImpl(
       currentIndex: null == currentIndex
@@ -157,6 +193,22 @@ class __$$HomeFeatureModelImplCopyWithImpl<$Res>
           ? _value._listBool
           : listBool // ignore: cast_nullable_to_non_nullable
               as List<bool>,
+      canPay: null == canPay
+          ? _value._canPay
+          : canPay // ignore: cast_nullable_to_non_nullable
+              as List<bool>,
+      canAddTable: null == canAddTable
+          ? _value.canAddTable
+          : canAddTable // ignore: cast_nullable_to_non_nullable
+              as bool,
+      canAddDiner: null == canAddDiner
+          ? _value._canAddDiner
+          : canAddDiner // ignore: cast_nullable_to_non_nullable
+              as List<bool>,
+      totalPay: null == totalPay
+          ? _value.totalPay
+          : totalPay // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -170,10 +222,16 @@ class _$HomeFeatureModelImpl implements _HomeFeatureModel {
       required final List<TableModel> tables,
       required this.currentTable,
       required this.currentDiner,
-      required final List<bool> listBool})
+      required final List<bool> listBool,
+      required final List<bool> canPay,
+      required this.canAddTable,
+      required final List<bool> canAddDiner,
+      required this.totalPay})
       : _productsList = productsList,
         _tables = tables,
-        _listBool = listBool;
+        _listBool = listBool,
+        _canPay = canPay,
+        _canAddDiner = canAddDiner;
 
   factory _$HomeFeatureModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$HomeFeatureModelImplFromJson(json);
@@ -208,9 +266,30 @@ class _$HomeFeatureModelImpl implements _HomeFeatureModel {
     return EqualUnmodifiableListView(_listBool);
   }
 
+  final List<bool> _canPay;
+  @override
+  List<bool> get canPay {
+    if (_canPay is EqualUnmodifiableListView) return _canPay;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_canPay);
+  }
+
+  @override
+  final bool canAddTable;
+  final List<bool> _canAddDiner;
+  @override
+  List<bool> get canAddDiner {
+    if (_canAddDiner is EqualUnmodifiableListView) return _canAddDiner;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_canAddDiner);
+  }
+
+  @override
+  final double totalPay;
+
   @override
   String toString() {
-    return 'HomeFeatureModel(currentIndex: $currentIndex, productsList: $productsList, tables: $tables, currentTable: $currentTable, currentDiner: $currentDiner, listBool: $listBool)';
+    return 'HomeFeatureModel(currentIndex: $currentIndex, productsList: $productsList, tables: $tables, currentTable: $currentTable, currentDiner: $currentDiner, listBool: $listBool, canPay: $canPay, canAddTable: $canAddTable, canAddDiner: $canAddDiner, totalPay: $totalPay)';
   }
 
   @override
@@ -227,7 +306,14 @@ class _$HomeFeatureModelImpl implements _HomeFeatureModel {
                 other.currentTable == currentTable) &&
             (identical(other.currentDiner, currentDiner) ||
                 other.currentDiner == currentDiner) &&
-            const DeepCollectionEquality().equals(other._listBool, _listBool));
+            const DeepCollectionEquality().equals(other._listBool, _listBool) &&
+            const DeepCollectionEquality().equals(other._canPay, _canPay) &&
+            (identical(other.canAddTable, canAddTable) ||
+                other.canAddTable == canAddTable) &&
+            const DeepCollectionEquality()
+                .equals(other._canAddDiner, _canAddDiner) &&
+            (identical(other.totalPay, totalPay) ||
+                other.totalPay == totalPay));
   }
 
   @JsonKey(ignore: true)
@@ -239,7 +325,11 @@ class _$HomeFeatureModelImpl implements _HomeFeatureModel {
       const DeepCollectionEquality().hash(_tables),
       currentTable,
       currentDiner,
-      const DeepCollectionEquality().hash(_listBool));
+      const DeepCollectionEquality().hash(_listBool),
+      const DeepCollectionEquality().hash(_canPay),
+      canAddTable,
+      const DeepCollectionEquality().hash(_canAddDiner),
+      totalPay);
 
   @JsonKey(ignore: true)
   @override
@@ -263,7 +353,11 @@ abstract class _HomeFeatureModel implements HomeFeatureModel {
       required final List<TableModel> tables,
       required final TableModel currentTable,
       required final DinerModel currentDiner,
-      required final List<bool> listBool}) = _$HomeFeatureModelImpl;
+      required final List<bool> listBool,
+      required final List<bool> canPay,
+      required final bool canAddTable,
+      required final List<bool> canAddDiner,
+      required final double totalPay}) = _$HomeFeatureModelImpl;
 
   factory _HomeFeatureModel.fromJson(Map<String, dynamic> json) =
       _$HomeFeatureModelImpl.fromJson;
@@ -280,6 +374,14 @@ abstract class _HomeFeatureModel implements HomeFeatureModel {
   DinerModel get currentDiner;
   @override
   List<bool> get listBool;
+  @override
+  List<bool> get canPay;
+  @override
+  bool get canAddTable;
+  @override
+  List<bool> get canAddDiner;
+  @override
+  double get totalPay;
   @override
   @JsonKey(ignore: true)
   _$$HomeFeatureModelImplCopyWith<_$HomeFeatureModelImpl> get copyWith =>

@@ -12,6 +12,11 @@
      "productTitle" : "Products",
      "productModalTitle" : "Click to add a new product",
      "paymentModalTitle" : "Are you sure you want to generate the payment?",
+     "tipModalTitle" : "Add tip",
+     "tipModalMessage" : "Enter the tip amount",
+     "billTitle" : "Bill",
+     "purchaseSummaryTitle" : "Purchase summary",
+     "payButton" : "Pay",
      "confirmButton" : "Confirm",
      "cancelButton" : "Cancel"
 }

@@ -48,7 +48,7 @@ class _HomeViewMobileState extends ConsumerState<HomeViewMobile> {
                   itemCount: state.tables.length,
                   itemBuilder: (context, index) => TableCard(
                     onEdit: () => notifier.editTable(index),
-                    onPay: () => notifier.paymentProcessShowModal(),
+                    onPay: () => notifier.paymentProcessShowModal(index),
                     label: state.tables[index].tableName!,
                   ),
                 ),

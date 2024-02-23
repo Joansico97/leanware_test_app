@@ -5,9 +5,11 @@ import 'package:leanware_test_app/domain/resources/resources.dart';
 
 class DinerResourceImpl implements DinerResource {
   @override
-  Either<String, List<DinerModel>> addNewDiner(
-      {required String dinerName, required String table, required List<DinerModel> dinerList}) {
-    Log().debug('agrego nuevo comensal');
+  Either<String, List<DinerModel>> addNewDiner({
+    required String dinerName,
+    required String table,
+    required List<DinerModel> dinerList,
+  }) {
     final newDiner = DinerModel(
       dinerName: dinerName,
       table: int.parse(table),
@@ -15,7 +17,7 @@ class DinerResourceImpl implements DinerResource {
       payment: PaymentSumaryModel(
         totalPayment: 0,
         tip: 0,
-        diner: '',
+        diner: dinerName,
       ),
     );
     dinerList.add(newDiner);

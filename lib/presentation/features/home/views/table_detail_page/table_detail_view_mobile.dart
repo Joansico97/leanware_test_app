@@ -49,7 +49,7 @@ class TableDetailViewMobile extends StatelessWidget {
                 ),
                 const Spacer(),
                 GestureDetector(
-                  onTap: () => notifier.paymentProcessShowModal(),
+                  onTap: () => notifier.paymentProcessShowModal(notifier.getIndex(state.currentTable)),
                   child: Container(
                     height: size.height(context, .08),
                     width: size.height(context, .08),
@@ -75,8 +75,9 @@ class TableDetailViewMobile extends StatelessWidget {
                 showProducts: state.listBool[index],
                 label: state.currentTable.diners![index].dinerName!,
                 total: state.currentTable.diners![index].payment!.totalPayment.toString(),
-                onShowItems: () => notifier.showItems(index),
-                showModal: () => notifier.addProductShowModal(index),
+                onShowItems: () => notifier.showItems(state.currentTable.diners![index], index),
+                showModal: () => notifier.addProductShowModal(state.currentTable.diners![index]),
+                products: state.currentTable.diners![index].order!,
               ),
             ),
           ),
@@ -94,6 +95,7 @@ class DinerTable extends StatelessWidget {
     required this.total,
     required this.onShowItems,
     required this.showModal,
+    required this.products,
   });
 
   final bool showProducts;
@@ -101,6 +103,7 @@ class DinerTable extends StatelessWidget {
   final String total;
   final VoidCallback onShowItems;
   final VoidCallback showModal;
+  final List<ProductModel> products;
 
   @override
   Widget build(BuildContext context) {
@@ -151,40 +154,36 @@ class DinerTable extends StatelessWidget {
           ),
         ),
         showProducts
-            ? Consumer(
-                builder: (context, ref, _) {
-                  final state = ref.watch(homeProvider);
-                  return Container(
-                    margin: EdgeInsets.only(
-                      left: size.width(context, .08),
-                      right: size.width(context, .08),
-                      bottom: size.height(context, .02),
-                    ),
-                    color: Colors.black12,
-                    child: SizedBox(
-                      height: size.height(context, state.currentDiner.order!.length.toDouble() * .03),
-                      child: ListView.builder(
-                        itemCount: state.currentDiner.order!.length,
-                        itemBuilder: (context, index) => Padding(
-                          padding: size.horizontal(context, .05),
-                          child: Row(
-                            children: [
-                              Text(
-                                state.currentDiner.order![index].name!,
-                                style: AppStyles.bodyL,
-                              ),
-                              const Spacer(),
-                              Text(
-                                '${state.currentDiner.order![index].price!}',
-                                style: AppStyles.bodyL,
-                              ),
-                            ],
+            ? Container(
+                margin: EdgeInsets.only(
+                  left: size.width(context, .08),
+                  right: size.width(context, .08),
+                  bottom: size.height(context, .02),
+                ),
+                color: Colors.black12,
+                child: SizedBox(
+                  height: size.height(context, products.length.toDouble() * .03),
+                  child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: products.length,
+                    itemBuilder: (context, index) => Padding(
+                      padding: size.horizontal(context, .05),
+                      child: Row(
+                        children: [
+                          Text(
+                            products[index].name!,
+                            style: AppStyles.bodyL,
                           ),
-                        ),
+                          const Spacer(),
+                          Text(
+                            '${products[index].price!}',
+                            style: AppStyles.bodyL,
+                          ),
+                        ],
                       ),
                     ),
-                  );
-                },
+                  ),
+                ),
               )
             : const SizedBox(),
       ],

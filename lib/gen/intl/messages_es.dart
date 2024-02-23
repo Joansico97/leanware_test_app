@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "billTitle": MessageLookupByLibrary.simpleMessage("Factura"),
         "cancelButton": MessageLookupByLibrary.simpleMessage("Cancelar"),
         "commingSoon": MessageLookupByLibrary.simpleMessage("Próximamente"),
         "confirmButton": MessageLookupByLibrary.simpleMessage("Confirmar"),
@@ -31,15 +32,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "dinerModalTitle":
             MessageLookupByLibrary.simpleMessage("Crear cliente"),
         "dinerTitle": MessageLookupByLibrary.simpleMessage("Cliente"),
+        "payButton": MessageLookupByLibrary.simpleMessage("pagar"),
         "paymentModalTitle": MessageLookupByLibrary.simpleMessage(
             "¿Está seguro de querer generar el pago?"),
         "productModalTitle": MessageLookupByLibrary.simpleMessage(
             "Haga clic para añadir un nuevo producto"),
         "productTitle": MessageLookupByLibrary.simpleMessage("Productos"),
+        "purchaseSummaryTitle":
+            MessageLookupByLibrary.simpleMessage("Resumen de compra"),
         "tableModalButton": MessageLookupByLibrary.simpleMessage("Crear"),
         "tableModalMessage":
             MessageLookupByLibrary.simpleMessage("Ingrese número de la mesa"),
         "tableModalTitle": MessageLookupByLibrary.simpleMessage("Crear mesa"),
-        "tableTitle": MessageLookupByLibrary.simpleMessage("Mesa")
+        "tableTitle": MessageLookupByLibrary.simpleMessage("Mesa"),
+        "tipModalMessage": MessageLookupByLibrary.simpleMessage(
+            "Ingresa la cantidad de propina"),
+        "tipModalTitle": MessageLookupByLibrary.simpleMessage("Añadir propina")
       };
 }

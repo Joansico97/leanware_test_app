@@ -12,6 +12,11 @@
      "productTitle" : "Productos",
      "productModalTitle" : "Haga clic para añadir un nuevo producto",
      "paymentModalTitle" : "¿Está seguro de querer generar el pago?",
+     "tipModalTitle" : "Añadir propina",
+     "tipModalMessage" : "Ingresa la cantidad de propina",
+     "billTitle" : "Factura",
+     "purchaseSummaryTitle" : "Resumen de compra",
+     "payButton" : "pagar",
      "confirmButton" : "Confirmar",
      "cancelButton" : "Cancelar"
 }

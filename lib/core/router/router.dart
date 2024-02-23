@@ -26,5 +26,11 @@ final _appRouter = GoRouter(
       parentNavigatorKey: rootNavigatorKey,
       builder: _tableDetailsHandler,
     ),
+    GoRoute(
+      path: RouterPaths.payment,
+      name: RouterPaths.payment,
+      parentNavigatorKey: rootNavigatorKey,
+      builder: _paymentHandler,
+    ),
   ],
 );

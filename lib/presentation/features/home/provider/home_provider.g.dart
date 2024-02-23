@@ -22,6 +22,11 @@ _$HomeFeatureModelImpl _$$HomeFeatureModelImplFromJson(
           DinerModel.fromJson(json['currentDiner'] as Map<String, dynamic>),
       listBool:
           (json['listBool'] as List<dynamic>).map((e) => e as bool).toList(),
+      canPay: (json['canPay'] as List<dynamic>).map((e) => e as bool).toList(),
+      canAddTable: json['canAddTable'] as bool,
+      canAddDiner:
+          (json['canAddDiner'] as List<dynamic>).map((e) => e as bool).toList(),
+      totalPay: (json['totalPay'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$$HomeFeatureModelImplToJson(
@@ -33,4 +38,8 @@ Map<String, dynamic> _$$HomeFeatureModelImplToJson(
       'currentTable': instance.currentTable,
       'currentDiner': instance.currentDiner,
       'listBool': instance.listBool,
+      'canPay': instance.canPay,
+      'canAddTable': instance.canAddTable,
+      'canAddDiner': instance.canAddDiner,
+      'totalPay': instance.totalPay,
     };
